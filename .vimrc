@@ -1,7 +1,9 @@
 call plug#begin()
   Plug 'altercation/vim-colors-solarized'
   Plug 'fatih/vim-go'
+  Plug 'pangloss/vim-javascript'
   Plug 'vim-ruby/vim-ruby'
+  Plug 'vim-scripts/groovy.vim'
 call plug#end()
 
 set nocompatible
@@ -39,6 +41,7 @@ endif
 " Filetype specific stuff
 autocmd BufNewFile,BufRead *.{c,h,cc} :call FreeBSD_Style()
 autocmd BufNewFile,BufRead {Gemfile,*.ru} setfiletype ruby
+autocmd BufNewFile,BufRead {Jenkinsfile} setfiletype groovy
 autocmd FileType css setlocal expandtab shiftwidth=2 tabstop=2
 autocmd FileType html setlocal expandtab shiftwidth=2 tabstop=2
 autocmd FileType javascript setlocal expandtab shiftwidth=2 tabstop=2
