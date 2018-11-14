@@ -44,6 +44,7 @@ autocmd BufNewFile,BufRead {Gemfile,*.ru} setfiletype ruby
 autocmd BufNewFile,BufRead {Jenkinsfile} setfiletype groovy
 autocmd FileType css setlocal expandtab shiftwidth=2 tabstop=2
 autocmd FileType html setlocal expandtab shiftwidth=2 tabstop=2
+autocmd FileType groovy setlocal expandtab shiftwidth=4 tabstop=4
 autocmd FileType javascript setlocal expandtab shiftwidth=2 tabstop=2
 autocmd FileType scss setlocal expandtab shiftwidth=2 tabstop=2
 autocmd FileType ruby setlocal expandtab shiftwidth=2 tabstop=2
