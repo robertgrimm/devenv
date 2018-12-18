@@ -19,7 +19,6 @@ set number
 set title
 
 set background=dark
-colorscheme solarized
 
 " Don't auto-comment
 " autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
@@ -49,6 +48,7 @@ autocmd FileType javascript setlocal expandtab shiftwidth=2 tabstop=2
 autocmd FileType scss setlocal expandtab shiftwidth=2 tabstop=2
 autocmd FileType ruby setlocal expandtab shiftwidth=2 tabstop=2
 autocmd FileType rc setlocal expandtab shiftwidth=2 tabstop=2
+autocmd FileType yaml setlocal expandtab shiftwidth=2 tabstop=2
 
 
 set tags=./tags,tags;/
