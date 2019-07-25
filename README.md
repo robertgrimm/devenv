@@ -3,7 +3,7 @@ Developer Environment
 
 ### ZSH Theme Setup
 ```
-git clone git@github.com:Powerlevel9k/powerlevel9k.git ~/.powerlevel9k
+git clone --single-branch --branch next https://github.com/bhilburn/powerlevel9k.git ~/.powerlevel9k
 ```
 
 ### VIM Setup

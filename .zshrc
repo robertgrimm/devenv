@@ -1,11 +1,12 @@
 # To install the powerlevel9k theme:
-# 	git clone git@github.com:Powerlevel9k/powerlevel9k.git ~/.powerlevel9k
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status)
-POWERLEVEL9K_MODE='nerdfont-complete'
-POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
-POWERLEVEL9K_SHORTEN_DELIMITER=""
-POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_right"
+# 	git clone --single-branch --branch next https://github.com/bhilburn/powerlevel9k.git ~/.powerlevel9k
+P9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
+P9K_RIGHT_PROMPT_ELEMENTS=(status)
+P9K_MODE='nerdfont-complete'
+P9K_DIR_SHORTEN_LENGTH=1
+P9K_DIR_SHORTEN_DELIMITER=""
+P9K_DIR_SHORTEN_STRATEGY="truncate_from_right"
+P9K_VCS_GIT_HOOKS=(vcs-detect-changes)
 source ~/.powerlevel9k/powerlevel9k.zsh-theme
 
 set -o vi
