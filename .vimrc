@@ -19,6 +19,7 @@ set number
 set title
 
 set background=dark
+" colorscheme solarized
 
 " Don't auto-comment
 " autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
@@ -40,11 +41,12 @@ endif
 " Filetype specific stuff
 autocmd BufNewFile,BufRead *.{c,h,cc} :call FreeBSD_Style()
 autocmd BufNewFile,BufRead {Gemfile,*.ru} setfiletype ruby
-autocmd BufNewFile,BufRead {Jenkinsfile} setfiletype groovy
+autocmd BufNewFile,BufRead {Jenkinsfile,JenkinsBuildTest} setfiletype groovy
 autocmd FileType css setlocal expandtab shiftwidth=2 tabstop=2
 autocmd FileType html setlocal expandtab shiftwidth=2 tabstop=2
 autocmd FileType groovy setlocal expandtab shiftwidth=4 tabstop=4
 autocmd FileType javascript setlocal expandtab shiftwidth=2 tabstop=2
+autocmd FileType json setlocal expandtab shiftwidth=2 tabstop=2
 autocmd FileType scss setlocal expandtab shiftwidth=2 tabstop=2
 autocmd FileType ruby setlocal expandtab shiftwidth=2 tabstop=2
 autocmd FileType rc setlocal expandtab shiftwidth=2 tabstop=2
