@@ -31,10 +31,13 @@ PROMPT_COMMAND=set_bash_prompt
 
 unamestr=`uname`
 if [[ "$unamestr" == 'Linux' ]]; then
-	alias ls='ls --color'
+	alias ls='ls --color=auto'
 else
 	alias ls='ls -G'
 fi
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
 
 alias rs='rails server -b 0.0.0.0'
 alias rc='rails console'
