@@ -2,14 +2,12 @@ set -o vi
 
 set_prompt() {
 	# https://www.calmar.ws/vim/256-xterm-24bit-rgb-color-chart.html
-	# 38;5;x = x foreground color
-	# 48;5;y = y background color
-	local c_black_on_blue="\[\e[38;5;0;48;5;67m\]"
-	local c_black_on_green="\[\e[38;5;0;48;5;70m\]"
-	local c_black_on_yellow="\[\e[38;5;0;48;5;143m\]"
-	local c_off="\[\e[m\]"
+	local c_black_on_blue="%F{0}%K{67}"
+	local c_black_on_green="%F{0}%K{70}"
+	local c_black_on_yellow="%F{0}%K{143}"
+	local c_off="%k%f"
 
-	local working_dir="$c_black_on_blue \w $c_off"
+	local working_dir="$c_black_on_blue %~ $c_off"
 
 	local branch_display=""
 	local branch=$(git symbolic-ref --short HEAD 2>/dev/null)
@@ -25,9 +23,9 @@ set_prompt() {
 		branch_display="$c_branch $branch $c_off"
 	fi
 
-	PS1="$working_dir$branch_display\n$ "
+	PS1="$working_dir$branch_display"$'\n'"$ "
 }
-PROMPT_COMMAND=set_prompt
+precmd_functions+=(set_prompt)
 
 unamestr=`uname`
 if [[ "$unamestr" == 'Linux' ]]; then
