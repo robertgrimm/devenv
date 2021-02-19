@@ -28,6 +28,14 @@ set_prompt() {
 }
 precmd_functions+=(set_prompt)
 
+# Enable bash-like history search via control-r
+bindkey -v
+bindkey '^R' history-incremental-search-backward
+
+# So history works better with tmux
+setopt noincappendhistory
+setopt nosharehistory
+
 unamestr=`uname`
 if [[ "$unamestr" == 'Linux' ]]; then
 	alias ls='ls --color=auto'
