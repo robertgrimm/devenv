@@ -3,11 +3,12 @@ set -o vi
 set_prompt() {
 	# https://www.calmar.ws/vim/256-xterm-24bit-rgb-color-chart.html
 	local c_black_on_blue="%F{0}%K{67}"
+	local c_black_on_purple="%F{0}%K{97}"
 	local c_black_on_green="%F{0}%K{70}"
 	local c_black_on_yellow="%F{0}%K{143}"
 	local c_off="%k%f"
 
-	local working_dir="$c_black_on_blue %~ $c_off"
+	local where_am_i="$c_black_on_purple %n@%m $c_black_on_blue %~ $c_off"
 
 	local branch_display=""
 	local branch=$(git symbolic-ref --short HEAD 2>/dev/null)
@@ -23,7 +24,7 @@ set_prompt() {
 		branch_display="$c_branch $branch $c_off"
 	fi
 
-	PS1="$working_dir$branch_display"$'\n'"$ "
+	PS1="$where_am_i$branch_display"$'\n'"$ "
 }
 precmd_functions+=(set_prompt)
 

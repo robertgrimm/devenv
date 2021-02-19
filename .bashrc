@@ -5,11 +5,13 @@ set_prompt() {
 	# 38;5;x = x foreground color
 	# 48;5;y = y background color
 	local c_black_on_blue="\[\e[38;5;0;48;5;67m\]"
+	local c_black_on_purple="\[\e[38;5;0;48;5;97m\]"
 	local c_black_on_green="\[\e[38;5;0;48;5;70m\]"
 	local c_black_on_yellow="\[\e[38;5;0;48;5;143m\]"
 	local c_off="\[\e[m\]"
 
 	local working_dir="$c_black_on_blue \w $c_off"
+	local where_am_i="$c_black_on_purple \u@\h $c_black_on_blue \w $c_off"
 
 	local branch_display=""
 	local branch=$(git symbolic-ref --short HEAD 2>/dev/null)
@@ -25,7 +27,7 @@ set_prompt() {
 		branch_display="$c_branch $branch $c_off"
 	fi
 
-	PS1="$working_dir$branch_display\n$ "
+	PS1="$where_am_i$branch_display\n$ "
 }
 PROMPT_COMMAND=set_prompt
 
