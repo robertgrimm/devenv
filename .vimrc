@@ -17,6 +17,7 @@ set nobackup
 set hlsearch
 set number
 set title
+set visualbell
 
 set background=dark
 " colorscheme solarized
