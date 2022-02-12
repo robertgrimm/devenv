@@ -13,6 +13,10 @@ export GOROOT=/usr/local/go
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
 
+if [ -d "/opt/homebrew/bin" ]; then
+	export PATH=$PATH:/opt/homebrew/bin
+fi
+
 if [ -d "/usr/local/git/bin" ]; then
 	export PATH=/usr/local/git/bin:$PATH
 fi
